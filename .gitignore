@@ -1,2 +1,6 @@
+# Directories
 /nbproject/
 /vendor/
+
+# Files
+composer.lock
