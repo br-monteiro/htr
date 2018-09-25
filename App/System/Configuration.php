@@ -46,7 +46,8 @@ class Configuration
      */
     public static function htrFileConfigs(): \stdClass
     {
-        $file = getcwd() . '/htr.json';
+        $projectDirectory = str_replace('App/System', '', __DIR__);
+        $file = $projectDirectory . 'htr.json';
 
         if (file_exists($file)) {
             $object = Json::decode(file_get_contents($file));
