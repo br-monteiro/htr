@@ -11,7 +11,7 @@ class Configuration
     // WARNING: CHANGE THIS CONTENT
     const SALT_KEY = 'C203DFCDFF90245C838C18082455B9BEDD023EB726001292053849394CE44304';
     const PATH_ENTITIES = 'App/Entities';
-    const JSON_SCHEMA = '../App/json-schema/';
+    const JSON_SCHEMA = '../App/json-schemes/';
     const EXPIRATE_TOKEN = 2592000; // 30 days
     const ALLOW_CORS = [];
     const ALLOW_HEADERS = [
@@ -46,7 +46,8 @@ class Configuration
      */
     public static function htrFileConfigs(): \stdClass
     {
-        $file = getcwd() . '/htr.json';
+        $projectDirectory = str_replace('App/System', '', __DIR__);
+        $file = $projectDirectory . 'htr.json';
 
         if (file_exists($file)) {
             $object = Json::decode(file_get_contents($file));
