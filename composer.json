@@ -26,7 +26,8 @@
     "scripts": {
         "make-entities": [
             "./vendor/bin/doctrine orm:convert-mapping --namespace='App\\Entities\\' --force --from-database  annotation ./",
-            "php ./vendor/bin/processingEntities"
+            "./vendor/bin/doctrine orm:generate-entities ./ --generate-annotations=true",
+            "php -r \"array_map('unlink', glob('App/Entities/*.php~'));\""
         ]
     }
 }
