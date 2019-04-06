@@ -11,7 +11,7 @@ use Doctrine\Common\Cache\ArrayCache;
 use Doctrine\ORM\Mapping\Driver\AnnotationDriver;
 
 $isDevMode = true;
-$paths = [getcwd() . '/' . cfg::PATH_ENTITIES];
+$paths = [cfg::baseDir() . cfg::PATH_ENTITIES];
 
 // the connection configuration
 $cache = new ArrayCache();

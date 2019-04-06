@@ -10,7 +10,7 @@
             "email": "bruno.monteirodg@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
         "php": "^7.0",
         "phbsis/htr-core": "^v1"
@@ -25,8 +25,8 @@
     },
     "scripts": {
         "make-entities": [
-            "./vendor/bin/doctrine orm:convert-mapping --namespace='App\\Entities\\' --force --from-database  annotation ./",
-            "./vendor/bin/doctrine orm:generate-entities ./ --generate-annotations=true",
+            "doctrine orm:convert-mapping --namespace='App\\Entities\\' --force --from-database annotation ./",
+            "doctrine orm:generate-entities ./ --generate-annotations=true",
             "php -r \"array_map('unlink', glob('App/Entities/*.php~'));\""
         ]
     }
